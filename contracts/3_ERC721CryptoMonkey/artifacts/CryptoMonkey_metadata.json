@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.14+commit.80d49f37"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "createRandomMonkey",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/3_CryptoMonkeyCollectibles/CryptoMonkey.sol": "CryptoMonkey"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/3_CryptoMonkeyCollectibles/CryptoMonkey.sol": {
+			"keccak256": "0x93d440cb9348e003ac9e89d75058619b8053ae96b024a48d1414634a2b7698ab",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d3ea0b589f94117c3dc91f956415518c489a647d21a17c4d70f6190959c09119",
+				"dweb:/ipfs/QmPFqVDGrbBcVVekGstxvjdcbij2CqveLkmRj3VPpBWHbn"
+			]
+		}
+	},
+	"version": 1
+}
