@@ -1,35 +1,26 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.10;
 
-contract CryptoMonkey {
-	uint maxMonkeys = 100;
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol";
+
+contract CryptoMonkey is ERC721 {
+	uint256 maxMonkeys = 100;
+	uint256 totalSupply;
+
+	mapping(address => uint256[]) public ownerTokens;
+
+	constructor() ERC721("CryptoMonkey", "CM") {}
 	
-	struct Monkey {
-		uint id;
-		string name;
-	}
-	
-    // token id  => Monkey
-    mapping(uint256 => Monkey) idToMonkey;
+	function mintMonkey() public {
+		require(totalSupply <= maxMonkeys, "max total supply reached");
+		
+		uint256 tokenId = ++totalSupply;
+		_safeMint(msg.sender, tokenId);
 
-    // token id => owner
-    mapping(uint256 => address) monkeyToOwner;
-
-	function _generateRandomId(string memory _str) private pure returns(uint) {
-		uint rand = uint(keccak256(bytes(_str)));
-		return rand % 3;
-	}
-	
-	function createRandomMonkey(string memory _name) public {
-		uint randId = _generateRandomId(_name);
-
-        // idToMonkey[randId].id
-        require(idToMonkey[randId].id == randId, "Zero or duplicate token id");
-
-		createMonkey(randId, _name);
+		ownerTokens[msg.sender].push(tokenId);
 	}
 
-    function createMonkey(uint _id, string memory _name) private {
-        idToMonkey[_id] = Monkey(_id, _name);
+	function ownerTokensLength(address owner) public view returns(uint256) {
+		return ownerTokens[owner].length;
 	}
 }
