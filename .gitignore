@@ -1,0 +1,4 @@
+.deps/
+contracts/1_CryptoMonkey/artifacts/
+contracts/2_TokenSwap/artifacts/
+contracts/3_CryptoMonkeyCollectibles/artifacts/
