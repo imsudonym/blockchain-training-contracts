@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.14+commit.80d49f37"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -46,7 +46,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "globalSwapCount",
+				"name": "getSwapsLength",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -144,6 +144,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "swaps",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "tokenA",
 				"outputs": [
@@ -183,7 +202,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/2_TokenSwap/TokenSwap.sol": "TokenSwap"
+			"contracts/2_ERC20TokenSwap/TokenSwap.sol": "TokenSwap"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -197,12 +216,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/2_TokenSwap/TokenSwap.sol": {
-			"keccak256": "0x5815998ad7ebf61aeffb900d4d6bc7f56fc25323508c9513004e2f7ea94f5af5",
+		"contracts/2_ERC20TokenSwap/TokenSwap.sol": {
+			"keccak256": "0x485bbec88cec546d3f8be7f6249b750e31497cd128f48a6725b7fc3865a67012",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4ed724ee0822340d6f22e6f5b7b7c3bca83bfe2aec97b745e6515a6623583bc6",
-				"dweb:/ipfs/QmUkbeTGrjTHikwGkJrd3yUFnuoBEoVXJpsKcdHmdagPdo"
+				"bzz-raw://3923683ce5aa96fa3b63cecccf948bba0a18097f242c472a5f7a254db2172348",
+				"dweb:/ipfs/QmXq5xAvgEiEB4hhMAJLH8T61kEuNYuBNY1jVHeXvNi8WL"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol": {

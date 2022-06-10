@@ -22,7 +22,7 @@ contract TokenSwap {
 
     mapping(address => bytes32[]) public ownerToSwaps;
     mapping(bytes32 => Swap) public swapInfo;
-    uint256 public globalSwapCount;
+    bytes32[] public swaps;
 
     constructor(
         address _tokenA,
@@ -48,11 +48,10 @@ contract TokenSwap {
             token = tokenB;
         }
 
-        bytes32 swapHash = _hash(globalSwapCount, msg.sender);
+        bytes32 swapHash = _hash(swaps.length, msg.sender);
         swapInfo[swapHash] = Swap(swapHash, swapType, msg.sender, address(0), amountFrom, amountTo, false);
         ownerToSwaps[msg.sender].push(swapHash);
-
-        globalSwapCount++;
+        swaps.push(swapHash);
 
         _safeTransferFrom(token, msg.sender, address(this), amountFrom);
     }
@@ -87,6 +86,10 @@ contract TokenSwap {
         tokenFrom.transfer(msg.sender, tempSwap.amountFrom);
         _safeTransferFrom(tokenTo, msg.sender, tempSwap.creator, tempSwap.amountTo);
         
+    }
+
+    function getSwapsLength() public view returns(uint256) {
+        return swaps.length;
     }
 
     function _safeTransferFrom(
