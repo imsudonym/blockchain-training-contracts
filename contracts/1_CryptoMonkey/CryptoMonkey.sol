@@ -16,7 +16,7 @@ contract CryptoMonkey {
 	}
 
 	function _generateRandomId(string memory _str) private pure returns(uint) {
-		uint rand = uint(keccak256(abi.encodePacked(_str)));
+		uint rand = uint(keccak256(bytes(_str)));
 		return rand % 7;
 	}
 	

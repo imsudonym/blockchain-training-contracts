@@ -341,7 +341,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/2_TokenSwap/TokenB.sol": "TokenB"
+			"contracts/2_ERC20TokenSwap/TokenB.sol": "TokenB"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -355,12 +355,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/2_TokenSwap/TokenB.sol": {
-			"keccak256": "0xcfefe0aaa581879f7f3c242ada8c3e46d70d08a026084bd6f4cd182ffdfc9633",
+		"contracts/2_ERC20TokenSwap/TokenB.sol": {
+			"keccak256": "0x26daa47d88f2f100681461371e36dad8e1d4e239226bf0b169a8b892b26f6734",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ab155e424b003dd24ac04090b4d5561c8ad0432ddfcb3701e69223c5a1b8bf24",
-				"dweb:/ipfs/QmcfEhKoGwWF5rS7JwNpCaHejumPMv7EXsmSsYhsFShzbB"
+				"bzz-raw://36a80af42850446d5b505186724a151d2d97b6594bd465fc8295fd89ad791c99",
+				"dweb:/ipfs/QmTd1A9mSk2L43PVxChJtdAMDYXxe1XMhe3hANPMV3VE1k"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol": {

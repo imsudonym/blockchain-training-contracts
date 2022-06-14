@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.14+commit.80d49f37"
 	},
 	"language": "Solidity",
 	"output": {
@@ -45,19 +45,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getSwapsLength",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -73,9 +60,9 @@
 				"name": "ownerToSwaps",
 				"outputs": [
 					{
-						"internalType": "bytes32",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bytes32"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -84,9 +71,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes32",
+						"internalType": "uint256",
 						"name": "id",
-						"type": "bytes32"
+						"type": "uint256"
 					}
 				],
 				"name": "swap",
@@ -97,18 +84,13 @@
 			{
 				"inputs": [
 					{
-						"internalType": "bytes32",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bytes32"
+						"type": "uint256"
 					}
 				],
-				"name": "swapInfo",
+				"name": "swaps",
 				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "id",
-						"type": "bytes32"
-					},
 					{
 						"internalType": "enum TokenSwap.SwapType",
 						"name": "swapType",
@@ -138,25 +120,6 @@
 						"internalType": "bool",
 						"name": "isSwapped",
 						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "swaps",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
 					}
 				],
 				"stateMutability": "view",
@@ -217,43 +180,11 @@
 	},
 	"sources": {
 		"contracts/2_ERC20TokenSwap/TokenSwap.sol": {
-			"keccak256": "0x485bbec88cec546d3f8be7f6249b750e31497cd128f48a6725b7fc3865a67012",
+			"keccak256": "0xae30c9cf7be5e0913d392c3fb18b02fa23c00a670daebaaa99de55c53661c075",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3923683ce5aa96fa3b63cecccf948bba0a18097f242c472a5f7a254db2172348",
-				"dweb:/ipfs/QmXq5xAvgEiEB4hhMAJLH8T61kEuNYuBNY1jVHeXvNi8WL"
-			]
-		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol": {
-			"keccak256": "0xc5c89c86600a8b41ce60df163da74daa9f9269f2304990fd1bf01db32ca6c468",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://bf23edf8e3f74e865249e70112280026a41520bae7ddcbbbae9b92dca625e984",
-				"dweb:/ipfs/QmchNJQdGdz2qRRKWUJAWe1wH7M67sB6Fm9sdstQXvoJL2"
-			]
-		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol": {
-			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
-				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
-			]
-		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
-			"keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
-				"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
-			]
-		},
-		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol": {
-			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
-				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+				"bzz-raw://7181261f0dd3fafc4e40070f6630983b7d64aa06baf259a9a82d49954f8753eb",
+				"dweb:/ipfs/QmVGvDgXuiYPHTMksxZ9TnGyCfXxGvPDDjMJMn4v8La15r"
 			]
 		}
 	},
