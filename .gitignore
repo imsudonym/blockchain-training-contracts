@@ -1,4 +1,4 @@
 .deps/
 contracts/1_CryptoMonkey/artifacts/
 contracts/2_ERC20TokenSwap/artifacts/
-contracts/3_ERC721CryptoMonkey/artifacts/
+contracts/3_ERC721CatsNft/artifacts/
