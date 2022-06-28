@@ -56,16 +56,16 @@ contract Ballot {
 
     function getWinningCandidate() private view returns (uint)  {
         uint winningVoteCount = 0;
-        uint winningCandidate_ = 0;
+        uint winningCandidate = 0;
         for (uint index = 0; index < candidates.length; index++) {
 
             if (candidates[index].voteCount > winningVoteCount) {
                 winningVoteCount = candidates[index].voteCount;
-                winningCandidate_ = index;
+                winningCandidate = index;
             } 
         }
 
-        return winningCandidate_;
+        return winningCandidate;
     }
 
     function getWinner() public view returns (string memory winnerName){
