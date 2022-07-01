@@ -4,23 +4,15 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract CatsNft is ERC721 {
-	uint maxSupply = 5;
-	uint totalSupply;
+	uint public maxSupply = 5;
+	uint public totalSupply;
 	mapping(address => uint256[]) public ownerTokens;
-	address public owner;
-
-	modifier onlyOwner {
-		require(msg.sender == owner, "caller is not owner");
-		_;
-	}
 
 	event Minted(uint256 tokenId, address minter);
 
-	constructor() ERC721("CatsNft", "CATS") {
-		owner = msg.sender;
-	}
+	constructor() ERC721("CatsNft", "CATS") {}
 	
-	function mint() public onlyOwner {
+	function mint() public {
 		require(totalSupply <= maxSupply, "max total supply reached");
 		
 		uint256 tokenId = ++totalSupply;
@@ -30,7 +22,7 @@ contract CatsNft is ERC721 {
 		emit Minted(tokenId, msg.sender);
 	}
 
-	function ownerTokensLength(address _owner) public view returns(uint) {
+	function ownerTokensLength(address _owner) external view returns(uint) {
 		return ownerTokens[_owner].length;
 	}
 
