@@ -5,9 +5,18 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract TokenB is ERC20 {
 
-    constructor() ERC20("Token B", "TKB") {}
+    address public owner;
 
-    function mint(uint256 amount) public {
+    constructor() ERC20("Token B", "TKB") {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner {
+        require(msg.sender == owner, "Access denied");
+        _;
+    }
+
+    function mint(uint256 amount) public onlyOwner {
         _mint(msg.sender, amount);
     }
 }
